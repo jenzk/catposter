@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Cat Poster - Create a poster for your lost pet!</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div id="poster-container" class="one-half column" style="margin-top: 10%">
+        <!-- Start Poster Preview -->
+        <div id="poster-preview">
+          <h2>{{Poster Title}}</h2>
+          <div id="preview-image">
+            <img src="/images/sample.jpg" />
+          </div>
+
+          <h4>{{Pet's Name}} - {{ Pet's Sex}}</h4>
+          <p>{{Additional Information}}</p>
+
+          <h4>Please Contact:</h4>
+          {{Owner's Name}} at {{Owner's Phone Number}} or {{Owner's Email}}
+        </div>
+      </div>
+    </div>
+
+    <form>
+      <div class="row">
+        <div class="four columns">
+          <label for="input-title">Poster Title</label>
+          <input
+            id="input-title"
+            class="u-full-width"
+            type="text"
+            placeholder="Enter your poster title" />
+        </div>
+        <div class="four columns">
+          <label for="input-title">Pet's Name</label>
+          <input
+            id="input-name"
+            class="u-full-width"
+            type="text"
+            placeholder="Enter your pet's name" />
+        </div>
+
+        <div class="four columns">
+          <label for="input-sex">Select Pet's Sex</label>
+          <select id="input-sex" class="u-full-width">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="input-additional">Additional Information</label>
+      <textarea
+        id="input-additional"
+        class="u-full-width"
+        placeholder="Color, breed and any additional helpful information. (e.g. Where were they last seen? Any unique markings?)"
+      ></textarea>
+
+      <div class="row">
+        <div class="four columns">
+          <label for="input-owner-name">Owner's Name</label>
+          <input
+            id="input-owner-name"
+            class="u-full-width"
+            type="text"
+            placeholder="John Doe" />
+        </div>
+        <div class="four columns">
+          <label for="input-owner-phone-number">Owner's Phone Number</label>
+          <input
+            id="input-owner-phone-number"
+            class="u-full-width"
+            type="text"
+            placeholder="(800)000-0000" />
+        </div>
+
+        <div class="four columns">
+          <label for="input-owner-email">Owner's Email</label>
+          <input
+            id="input-owner-email"
+            class="u-full-width"
+            type="text"
+            placeholder="example@email.com" />
+        </div>
+      </div>
+      <button class="button-primary">Finish Poster</button>
+    </form>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

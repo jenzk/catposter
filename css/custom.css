@@ -1,0 +1,28 @@
+/**
+All custom styles here.
+**/
+
+#poster-container {
+    width: 100%;
+}
+
+#poster-preview {
+    width: 600px;
+    height: 800px;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#poster-preview #preview-image {
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#poster-preview #preview-image img {
+    width: 100%;
+}
