@@ -37,23 +37,22 @@
       <div id="poster-container" class="one-half column" style="margin-top: 10%">
         <!-- Start Poster Preview -->
         <div id="poster-preview">
-          <h2>{{Poster Title}}</h2>
+          <h2 id="preview-title">{{Poster Title}}</h2>
           <div id="preview-image">
             <img src="/images/sample.jpg" />
           </div>
 
-          <h4>{{Pet's Name}} - {{ Pet's Sex}}</h4>
-          <p>{{Additional Information}}</p>
+          <p id="preview-info">{{Additional Information}}</p>
 
           <h4>Please Contact:</h4>
-          {{Owner's Name}} at {{Owner's Phone Number}} or {{Owner's Email}}
+          <p id="preview-owner-info"></p>
         </div>
       </div>
     </div>
 
     <form>
       <div class="row">
-        <div class="four columns">
+        <div class="six columns">
           <label for="input-title">Poster Title</label>
           <input
             id="input-title"
@@ -61,29 +60,13 @@
             type="text"
             placeholder="Enter your poster title" />
         </div>
-        <div class="four columns">
-          <label for="input-title">Pet's Name</label>
-          <input
-            id="input-name"
-            class="u-full-width"
-            type="text"
-            placeholder="Enter your pet's name" />
-        </div>
-
-        <div class="four columns">
-          <label for="input-sex">Select Pet's Sex</label>
-          <select id="input-sex" class="u-full-width">
-            <option>Male</option>
-            <option>Female</option>
-          </select>
-        </div>
       </div>
 
-      <label for="input-additional">Additional Information</label>
+      <label for="input-info">Additional Information</label>
       <textarea
-        id="input-additional"
+        id="input-info"
         class="u-full-width"
-        placeholder="Color, breed and any additional helpful information. (e.g. Where were they last seen? Any unique markings?)"
+        placeholder="Name, sex, color, breed and any additional helpful information. (e.g. Where were they last seen? Any unique markings?)"
       ></textarea>
 
       <div class="row">
@@ -98,7 +81,7 @@
         <div class="four columns">
           <label for="input-owner-phone-number">Owner's Phone Number</label>
           <input
-            id="input-owner-phone-number"
+            id="input-owner-phone"
             class="u-full-width"
             type="text"
             placeholder="(800)000-0000" />
@@ -117,6 +100,7 @@
     </form>
   </div>
 
+<script src="js/app.js"></script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
