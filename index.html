@@ -34,13 +34,13 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div id="poster-container" class="one-half column" style="margin-top: 10%">
+      <div id="poster-container" class="one-half column" style="margin-top: 5%">
         <!-- Start Poster Preview -->
-        <div id="poster-preview">
+        <div id="poster-preview" class="border">
           <h2 id="preview-title">{{Poster Title}}</h2>
 
           <!-- Image drop zone -->
-          <div id="preview-image">
+          <div id="preview-image" class="border">
             <div class="inner">Drag an image here</div>
           </div>
 
@@ -98,10 +98,13 @@
             placeholder="example@email.com" />
         </div>
       </div>
-      <button class="button-primary">Finish Poster</button>
+      <button id="finish-poster" class="button-primary">Finish Poster</button>
     </form>
   </div>
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script> -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 <script src="js/app.js"></script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
