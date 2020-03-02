@@ -15,6 +15,10 @@
     ownerPhone.addEventListener('input', onOwnerUpdate);
     ownerEmail.addEventListener('input', onOwnerUpdate);
 
+
+    // Image drop zone.
+    var drop = document.getElementById('preview-image');
+    dropZoneListener(drop);
 })();
 
 function onPosterTitleUpdate(e) {
@@ -41,4 +45,32 @@ function onOwnerUpdate(e) {
 
     var previewOwnerInfo = document.getElementById('preview-owner-info');
     previewOwnerInfo.textContent = text;
+}
+
+function dropZoneListener(drop) {
+    drop.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+    drop.addEventListener('dragenter', function(e) {
+        e.preventDefault();
+    });
+    drop.addEventListener('drop', function(e) {
+        e.preventDefault();
+
+        var dt = e.dataTransfer;
+        var files = dt.files;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.addEventListener('loadend', function() {
+                var bin = this.result;
+                var imgEl = document.createElement('img');
+                imgEl.src = bin;
+                drop.innerHTML = '';
+                drop.appendChild(imgEl);
+            });
+        }
+    });
 }

@@ -18,11 +18,25 @@ All custom styles here.
 }
 
 #poster-preview #preview-image {
-    width: 40%;
+    background: #f6f6f6;
+    border: 1px dashed #444;
+    height: 40%;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
 }
 
+#poster-preview #preview-image .inner {
+    padding-top: 30%;
+}
+
+#poster-preview #preview-image .inner.hide {
+    display: none;
+}
+
 #poster-preview #preview-image img {
-    width: 100%;
+    position: relative;
+    max-height: 310px;
+    max-width: 600px;
+    z-index: 1;
 }
