@@ -7,13 +7,22 @@ All custom styles here.
 }
 
 #poster-preview {
-    width: 785px;
-    height: 980px;
+    width: 600px;
+    height: 800px;
+
     margin: 0 auto;
-    /* margin-bottom: 5%; */
+    margin-bottom: 5%;
     text-align: center;
-    /* padding: 15px; */
-    /* box-sizing: border-box; */
+}
+
+#poster-preview h4 {
+    font-size: 2.2rem;
+}
+
+
+#poster-preview.full-screen {
+    width: 70vh;
+    height: 90vh;
 }
 
 #poster-preview.border {
@@ -49,9 +58,13 @@ All custom styles here.
 }
 
 #poster-preview #preview-info {
-    margin-top: 20px;
+    margin: 20px;
 }
 
 #poster-preview #preview-owner-info {
     font-weight: bold;
+}
+
+#poster-preview .preview-contact-info p {
+    margin: 0;
 }

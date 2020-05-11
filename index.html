@@ -47,7 +47,11 @@
           <p id="preview-info">{{Additional Information}}</p>
 
           <h4>Please Contact:</h4>
-          <p id="preview-owner-info"></p>
+          <div class="preview-contact-info">
+            <p id="preview-owner-name"></p>
+            <p id="preview-owner-phone"></p>
+            <p id="preview-owner-email"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -98,13 +102,15 @@
             placeholder="example@email.com" />
         </div>
       </div>
+      <button id="next-button" class="button-primary">Next</button>
       <button id="finish-poster" class="button-primary">Finish Poster</button>
     </form>
   </div>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script> -->
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+<!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<!-- <script src="js/pdfkit.standalone.js"></script> -->
 <script src="js/app.js"></script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
