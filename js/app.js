@@ -27,7 +27,7 @@
         var previewOwnerEmail = document.getElementById('preview-owner-email').textContent;
         var img = document.getElementById('preview-image').getElementsByTagName('img')[0].src;
 
-        var doc = new jsPDF({
+        var doc = new jspdf.jsPDF({
             format: 'letter'
         });
 
@@ -58,10 +58,16 @@
         doc.text(previewOwnerPhone, 105, 185, { align: 'center', maxWidth: 180 });
         doc.text(previewOwnerEmail, 105, 190, { align: 'center', maxWidth: 180 });
 
-        doc.text("testing1", 105, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-        doc.text("testing2", 110, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-        doc.text("testing3", 115, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-        doc.text("testing4", 120, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+        const clipLength = 8;
+        let offset = 10;
+
+        for (let clip = 0; clip < clipLength; clip ++) {
+            doc.text(previewOwnerName, 10 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+            doc.text(previewOwnerPhone, 23 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+            doc.text(previewOwnerEmail, 33 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+            offset += 25;
+        }
+
         // doc.autoPrint();
         doc.save('poster.pdf');
     });
