@@ -1,3 +1,18 @@
+// format phone number
+let phoneFormatter = (str) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + str).replace(/\D/g, '');
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+    if (match) {
+        return '(' + match[1] + ')' + match[2] + '-' + match[3]
+    };
+
+    return null
+};
+
 ;(function() {
 
     // Get elements by ID.
@@ -37,6 +52,7 @@
 
         console.log(docWidth, width);
 
+
         // var height = (imageProps.height * width) / width;
 
         // console.log(imageProps);
@@ -58,13 +74,16 @@
         doc.text(previewOwnerPhone, 105, 185, { align: 'center', maxWidth: 180 });
         doc.text(previewOwnerEmail, 105, 190, { align: 'center', maxWidth: 180 });
 
+               
+        
+
         const clipLength = 8;
         let offset = 10;
 
         for (let clip = 0; clip < clipLength; clip ++) {
             doc.text(previewOwnerName, 10 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-            doc.text(previewOwnerPhone, 23 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-            doc.text(previewOwnerEmail, 33 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+            doc.text(previewOwnerPhone, 15 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+            doc.text(previewOwnerEmail, 24 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
             offset += 25;
         }
 
@@ -130,7 +149,7 @@ function onOwnerUpdate(e) {
     var previewOwnerName = document.getElementById('preview-owner-name');
     previewOwnerName.textContent = ownerName;
     var previewOwnerPhone = document.getElementById('preview-owner-phone');
-    previewOwnerPhone.textContent = ownerPhone;
+    previewOwnerPhone.textContent = phoneFormatter(ownerPhone);
     var previewOwnerEmail = document.getElementById('preview-owner-email');
     previewOwnerEmail.textContent = ownerEmail;
 }
