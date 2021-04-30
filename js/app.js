@@ -24,7 +24,7 @@ let phoneFormatter = (str) => {
     var ownerEmail = document.getElementById('input-owner-email');
 
     var finishPosterBtn = document.getElementById('finish-poster');
-    var nextBtn = document.getElementById('next-button');
+    // var nextBtn = document.getElementById('next-button');
 
     // Add event listeners.
     title.addEventListener('input', onPosterTitleUpdate);
@@ -76,25 +76,25 @@ let phoneFormatter = (str) => {
 
                
         
+        if (document.getElementById('input-tearoff').checked) {
+            const clipLength = 8;
+            let offset = 10;
 
-        const clipLength = 8;
-        let offset = 10;
-
-        for (let clip = 0; clip < clipLength; clip ++) {
-            doc.text(previewOwnerName, 10 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-            doc.text(previewOwnerPhone, 15 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-            doc.text(previewOwnerEmail, 24 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-            offset += 25;
+            for (let clip = 0; clip < clipLength; clip ++) {
+                doc.text(previewOwnerName, 10 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+                doc.text(previewOwnerPhone, 16 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+                doc.text(previewOwnerEmail, 25 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+                offset += 25;
+            }
         }
-
         // doc.autoPrint();
         doc.save('poster.pdf');
     });
-    nextBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var posterPreview = document.getElementById('poster-preview'); 
-        posterPreview.classList.toggle('full-screen');
-    });
+    // nextBtn.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     var posterPreview = document.getElementById('poster-preview'); 
+    //     posterPreview.classList.toggle('full-screen');
+    // });
 
     // Update all elements.
     updateAll();

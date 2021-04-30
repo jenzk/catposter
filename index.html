@@ -52,6 +52,14 @@
             <p id="preview-owner-phone"></p>
             <p id="preview-owner-email"></p>
           </div>
+
+      <div id="preview-tabs">
+        <p>Bob</p>
+        <p>3105555555</p>
+        <p>email@email.com</p>
+      </div>
+        
+
         </div>
       </div>
     </div>
@@ -89,8 +97,7 @@
           <input
             type="tel"
             id="input-owner-phone"
-            class="u-full-width"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+            class="u-full-width" />
         </div>
 
         <div class="four columns">
@@ -105,15 +112,16 @@
 
         <div class="row">
           <div class="six columns">
-            <label>
-              <input type="checkbox">
-              <span class="label-body">Create tear-off tabs?</span>
+            <label for="input-tearoff">
+            <input 
+              id="input-tearoff"
+              type="checkbox" />
+            <span class="label-body">Create tear-off tabs?</span>
             </label>
           </div>
         </div>
       
-
-      <button id="next-button" class="button-primary">Next</button>
+      <!-- <button id="next-button" class="button-primary">Next</button> -->
       <button id="finish-poster" class="button-primary">Finish Poster</button>
     </form>
   </div>

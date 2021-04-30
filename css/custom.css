@@ -13,6 +13,7 @@ All custom styles here.
     margin: 0 auto;
     margin-bottom: 5%;
     text-align: center;
+    position: relative;
 }
 
 #poster-preview h4 {
@@ -67,4 +68,20 @@ All custom styles here.
 
 #poster-preview .preview-contact-info p {
     margin: 0;
+}
+
+#preview-tabs {
+    position: absolute;
+    bottom: 40px;
+    left: -15px;
+    transform: rotate(-90deg);
+}
+
+#preview-tabs p {
+
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 0.8em;
+    line-height: 1.2;
+    
 }
