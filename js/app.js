@@ -22,6 +22,7 @@ let phoneFormatter = (str) => {
     var ownerName = document.getElementById('input-owner-name');
     var ownerPhone = document.getElementById('input-owner-phone');
     var ownerEmail = document.getElementById('input-owner-email');
+    var tearOffChecked = document.getElementById('input-tearoff');
 
     var finishPosterBtn = document.getElementById('finish-poster');
     // var nextBtn = document.getElementById('next-button');
@@ -32,6 +33,7 @@ let phoneFormatter = (str) => {
     ownerName.addEventListener('input', onOwnerUpdate);
     ownerPhone.addEventListener('input', onOwnerUpdate);
     ownerEmail.addEventListener('input', onOwnerUpdate);
+    tearOffChecked.addEventListener('change', onOwnerUpdate);
     finishPosterBtn.addEventListener('click', function(e) {
         e.preventDefault();
 
@@ -81,9 +83,9 @@ let phoneFormatter = (str) => {
             let offset = 10;
 
             for (let clip = 0; clip < clipLength; clip ++) {
-                doc.text(previewOwnerName, 10 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-                doc.text(previewOwnerPhone, 16 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
-                doc.text(previewOwnerEmail, 25 + offset, 275, { align: 'center', maxWidth: 180, angle: 90, rotationDirection: 1 });
+                doc.text(previewOwnerName, 15 + offset, 275, { align: 'center', maxWidth: 225, angle: 90, rotationDirection: 1 });
+                doc.text(previewOwnerPhone, 22 + offset, 275, { align: 'center', maxWidth: 225, angle: 90, rotationDirection: 1 });
+                doc.text(previewOwnerEmail, 32 + offset, 275, { align: 'center', maxWidth: 225, angle: 90, rotationDirection: 1 });
                 offset += 25;
             }
         }
@@ -142,6 +144,7 @@ function onPosterInfoUpdate(e) {
 }
 
 function onOwnerUpdate(e) {
+    console.log(document.getElementById('input-tearoff').checked);
     var ownerName = document.getElementById('input-owner-name').value;
     var ownerPhone = document.getElementById('input-owner-phone').value;
     var ownerEmail = document.getElementById('input-owner-email').value;
@@ -152,7 +155,32 @@ function onOwnerUpdate(e) {
     previewOwnerPhone.textContent = phoneFormatter(ownerPhone);
     var previewOwnerEmail = document.getElementById('preview-owner-email');
     previewOwnerEmail.textContent = ownerEmail;
+
+    // render the tabs if checked
+    const previewTabs = document.getElementById("preview-tabs");
+    previewTabs.innerHTML = "";
+
+    if (document.getElementById('input-tearoff').checked) {
+        const tabCount = 8
+        
+        for (let tab = 0; tab < tabCount; tab++) {
+            const newDiv = document.createElement("div");
+
+            const newP = document.createElement("p");
+            newP.textContent = ownerName;
+            newDiv.appendChild(newP);
+            const newP2 = document.createElement("p");
+            newP2.textContent = phoneFormatter(ownerPhone);
+            newDiv.appendChild(newP2);
+            const newP3 = document.createElement("p");
+            newP3.textContent = ownerEmail;
+            newDiv.appendChild(newP3);
+        
+            previewTabs.appendChild(newDiv);
+        } 
+    }
 }
+
 
 function dropZoneListener(drop) {
     drop.addEventListener('dragover', function(e) {

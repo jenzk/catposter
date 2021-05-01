@@ -72,9 +72,14 @@ All custom styles here.
 
 #preview-tabs {
     position: absolute;
-    bottom: 40px;
-    left: -15px;
+    left: 42%;
     transform: rotate(-90deg);
+    top: 57%;
+}
+
+#preview-tabs div {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #preview-tabs p {
